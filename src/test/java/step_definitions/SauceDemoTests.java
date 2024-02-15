@@ -35,6 +35,7 @@ public class SauceDemoTests {
 	public void user_is_logged_successfully() throws InterruptedException {
 		Thread.sleep(2000);
 	    Assert.assertTrue(homepage.homepage_product_text.isDisplayed());
+	    
 	}
 	
 	
@@ -62,4 +63,21 @@ public class SauceDemoTests {
 	}
 	
 	// valid user invalid password login scenario  = ends
+	
+	
+	
+	
+	// scenario outline invalid  - starts
+	
+	@When("user enters username {string} and password {string}")
+	public void user_enters_username_and_password(String username, String password) {
+		sauceloginpage.loginUsername.sendKeys(username);
+		sauceloginpage.loginPassword.sendKeys(password);
+	}
+	
+	// scenario outline invalid  - ends
+	
+	
+	
+	
 }
