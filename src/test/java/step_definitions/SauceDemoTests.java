@@ -78,6 +78,18 @@ public class SauceDemoTests {
 	// scenario outline invalid  - ends
 	
 	
+	// scenario step parameter - starts
 	
+	@When("user enters invalid username {string} and invalid password {string}")
+	public void user_enters_invalid_username_and_invalid_password(String username, String password) {
+		sauceloginpage.loginUsername.sendKeys(username);
+		sauceloginpage.loginPassword.sendKeys(password);
+	}
+	@Then("user should not be logged in with an error message as {string}")
+	public void user_should_not_be_logged_in_with_an_error_message_as(String errorMessage) {
+	   System.out.println("Error message is: " + errorMessage);
+	}
+	
+	// scenario step parameter - ends
 	
 }

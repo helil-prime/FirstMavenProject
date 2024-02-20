@@ -12,7 +12,7 @@ import io.cucumber.junit.CucumberOptions;
 				},
 		features="src/test/resources/features",
 		glue="step_definitions",
-		tags="@ES-425"
+		tags="@invalid_login_param"
 		)
 public class TestRunner {
 

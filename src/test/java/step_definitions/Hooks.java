@@ -29,5 +29,16 @@ public class Hooks {
 		}
 		Driver.quitDriver();
 	}
+	
+	// tagged hooks
+	@After ("@ES-425")
+	public void close(Scenario scenario) {
+		if (scenario.isFailed()) {
+			final byte[] screenshot = ((TakesScreenshot) 
+					Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+			scenario.attach(screenshot, "image/png", "screenshot");
+		}
+		Driver.quitDriver();
+	}
 
 }

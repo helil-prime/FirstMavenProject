@@ -12,7 +12,7 @@ import io.cucumber.junit.CucumberOptions;
 				},
 		features="src/test/resources/features",
 		glue="step_definitions",
-		tags="@outline",
+		tags="@invalid_login_param",
 		dryRun=true
 		)
 public class DryRunner {

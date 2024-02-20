@@ -53,14 +53,13 @@ Feature: Sauce Demo Functionalities
     
     
     
+    # Day 18 - Cucumber scenario parameterization
     
-    
-    
-    
-    
-    
-    
-    
+  @invalid_login_param
+  Scenario: Sauce demo invalid username login
+    When user enters invalid username "hellohello" and invalid password "invalidPassword"
+    And user clicks on the signin button
+    Then user should not be logged in with an error message as "Epic sadface: Username and password do not match any user in this service"
     
     
     
